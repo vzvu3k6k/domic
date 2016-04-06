@@ -27,4 +27,38 @@ b
       assert.strictEqual(doc.textContent, 'a c ')
     })
   })
+
+  describe('querySelector', () => {
+    context('when there is a match', () => {
+      it('should return a DomicNode instance', () => {
+        assert(parse('<p/>').querySelector('p') instanceof DomicNode)
+      })
+    })
+
+    context('when there is not a match', () => {
+      it('should return null', () => {
+        assert.strictEqual(parse('<p/>').querySelector('span'), null)
+      })
+    })
+  })
+
+  describe('querySelectorAll', () => {
+    context('when there is a match', () => {
+      it('should return an array of DomicNode instance', () => {
+        const results = parse('<p/><p/>').querySelectorAll('p')
+        assert(Array.isArray(results))
+        for (const result of results) {
+          assert(result instanceof DomicNode)
+        }
+      })
+    })
+
+    context('when there is not a match', () => {
+      it('should return an empty array', () => {
+        const results = parse('<p/><p/>').querySelectorAll('span')
+        assert(Array.isArray(results))
+        assert.equal(results.length, 0)
+      })
+    })
+  })
 })
