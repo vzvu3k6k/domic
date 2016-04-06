@@ -28,6 +28,24 @@ b
     })
   })
 
+  describe('getAttribute', () => {
+    context('when it has the attribute', () => {
+      it("should return attribute's value", () => {
+        const doc = parse('<p class="foo">')
+        const p = doc.querySelector('p')
+        assert.strictEqual(p.getAttribute('class'), 'foo')
+      })
+    })
+
+    context("when it doesn't have the attribute", () => {
+      it('should return null', () => {
+        const doc = parse('<p class="foo">')
+        const p = doc.querySelector('p')
+        assert.strictEqual(p.getAttribute('id'), null)
+      })
+    })
+  })
+
   describe('querySelector', () => {
     context('when there is a match', () => {
       it('should return a DomicNode instance', () => {

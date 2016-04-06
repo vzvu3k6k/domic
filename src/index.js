@@ -22,6 +22,13 @@ export default class DomicNode {
     return collectText(this.tree)
   }
 
+  getAttribute (name) {
+    if (!this.tree.attribs || !(name in this.tree.attribs)) {
+      return null
+    }
+    return this.tree.attribs[name]
+  }
+
   querySelector (selector) {
     const node = cssSelect.selectOne(
       selector,
