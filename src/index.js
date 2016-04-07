@@ -1,51 +1,6 @@
-import cssSelect from 'css-select'
+export { default } from './document'
 
-function collectText (nodeArray) {
-  return nodeArray.reduce((text, node) => {
-    if (node.type === 'text') {
-      return text + node.data
-    }
-    if (node.children) {
-      return text + collectText(node.children)
-    }
-    return text
-  }, '')
-}
-
-export default class DomicNode {
-  constructor (tree) {
-    this.tree = tree
-    this.cssSelectOption = { strict: true }
-  }
-
-  get textContent () {
-    return collectText(this.tree)
-  }
-
-  getAttribute (name) {
-    if (!this.tree.attribs || !(name in this.tree.attribs)) {
-      return null
-    }
-    return this.tree.attribs[name]
-  }
-
-  querySelector (selector) {
-    const node = cssSelect.selectOne(
-      selector,
-      this.tree,
-      this.cssSelectOption
-    )
-    if (node) {
-      return new DomicNode(node)
-    }
-    return null
-  }
-
-  querySelectorAll (selector) {
-    const node = cssSelect(selector, this.tree, this.cssSelectOption)
-    if (node.length === 0) {
-      return []
-    }
-    return node.map((c) => new DomicNode(c))
-  }
-}
+export { default as Document } from './document'
+export { default as Element } from './element'
+export { default as Node } from './node'
+export { default as ParentNodeMixin } from './parent_node_mixin'
