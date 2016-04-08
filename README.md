@@ -1,6 +1,6 @@
 # domic
 
-Wraps a tree from DomHandler of htmlparser2 and provides `getAttribute`, `textContent`, `querySelector` and `querySelectorAll`.
+Wraps a tree from DomHandler of [htmlparser2](https://www.npmjs.com/package/htmlparser2) and provides `getAttribute`, `textContent`, `querySelector` and `querySelectorAll`.
 
 ```js
 import Document from '@vzvu3k6k/domic'
@@ -17,3 +17,8 @@ console.log(p.textContent) // "Hello, domic."
 ```
 
 `querySelector` and `querySelectorAll` are powered by [css-selector](https://www.npmjs.com/package/css-selector).
+
+## See Also
+
+- [jsdom](https://www.npmjs.com/package/jsdom): A JavaScript implementation of the DOM and HTML standards
+- [cheerio](https://www.npmjs.com/package/cheerio): jQuery-like DOM manipulation and traversing
