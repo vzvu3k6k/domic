@@ -26,6 +26,7 @@
   "publishConfig": {
     "access": "public"
   },
+  "repository": "vzvu3k6k/domic",
   "scripts": {
     "build": "rimraf lib && babel --source-maps true --out-dir lib src",
     "lint": "eslint *.js src test",
