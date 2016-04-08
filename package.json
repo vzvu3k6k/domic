@@ -2,6 +2,7 @@
   "name": "@vzvu3k6k/domic",
   "version": "0.0.1",
   "author": "vzvu3k6k <vzvu3k6k@gmail.com>",
+  "description": "wraps a tree from DomHandler of htmlparser2 and provides some DOM methods",
   "dependencies": {
     "css-select": "^1.2.0"
   },
