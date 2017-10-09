@@ -8,6 +8,11 @@ function parse (html) {
 
 describe('Node', () => {
   describe('textContent', () => {
+    it('should handle HTML entities', () => {
+      const node = parse('<p>&hearts;</p>')
+      assert.strictEqual(node.textContent, '♥')
+    })
+
     it('should handle new lines', () => {
       const node = parse(`<p>a
 b

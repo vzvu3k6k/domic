@@ -4,7 +4,8 @@
   "author": "vzvu3k6k <vzvu3k6k@gmail.com>",
   "description": "wraps a tree from DomHandler of htmlparser2 and provides some DOM methods",
   "dependencies": {
-    "css-select": "^1.2.0"
+    "css-select": "^1.2.0",
+    "entities": "^1.1.1"
   },
   "devDependencies": {
     "babel-cli": "^6.5.1",

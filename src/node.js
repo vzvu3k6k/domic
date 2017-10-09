@@ -1,6 +1,8 @@
+import entities from 'entities'
+
 function collectText (node) {
   if (node.type === 'text') {
-    return node.data
+    return entities.decodeHTML(node.data)
   }
   if (node.children) {
     return node.children.reduce((text, node) => {
