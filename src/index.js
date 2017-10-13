@@ -1,6 +1,10 @@
-export { default } from './document'
+import Document from './document'
+import Element from './element'
+import Node from './node'
+import ParentNodeMixin from './parent_node_mixin'
 
-export { default as Document } from './document'
-export { default as Element } from './element'
-export { default as Node } from './node'
-export { default as ParentNodeMixin } from './parent_node_mixin'
+module.exports = Document
+module.exports.Document = Document
+module.exports.Element = Element
+module.exports.Node = Node
+module.exports.ParentNodeMixin = ParentNodeMixin
