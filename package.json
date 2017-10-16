@@ -26,7 +26,6 @@
   ],
   "license": "CC0-1.0",
   "main": "lib/index.js",
-  "private": true,
   "publishConfig": {
     "access": "public"
   },
